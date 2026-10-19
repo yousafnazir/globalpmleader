@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On Becoming a Servant Leader — Global PM Leader</title>
+<meta name="description" content="Servant Leadership and Emotional Intelligence skills for Project Managers — practical guidance to help you lead with purpose, empathy, and impact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #13202a;
+    --ink-soft: #3a4a55;
+    --sand: #f3ebe0;
+    --sand-deep: #e6d5bc;
+    --mustard: #c98a1a;
+    --teal: #0e7c7b;
+    --teal-deep: #0a5c5b;
+    --paper: #fffaf4;
+    --line: rgba(19, 32, 42, .14);
+    --max: 1180px;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: Sora, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button, input { font: inherit; }
+  .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+  .skip {
+    position: absolute; left: 12px; top: -40px; z-index: 100;
+    background: var(--ink); color: #fff; padding: 8px 12px;
+  }
+  .skip:focus { top: 8px; }
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Nav */
+  .site-nav {
+    position: absolute; inset: 0 0 auto; z-index: 20;
+    padding: 22px 0;
+  }
+  .site-nav .wrap {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    color: #fff;
+  }
+  .brand img {
+    width: 52px; height: 52px; object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255,255,255,.35);
+  }
+  .brand strong {
+    display: block;
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    max-width: 14ch;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 4px;
+    list-style: none; margin: 0; padding: 0;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,.9);
+    font-size: 14px; font-weight: 500;
+    padding: 10px 12px;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta {
+    margin-left: 8px;
+    background: #fff; color: var(--ink) !important;
+    font-weight: 700 !important;
+    padding: 10px 16px !important;
+  }
+  .menu-toggle {
+    display: none;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    min-height: 44px; padding: 0 14px;
+    font-weight: 700; cursor: pointer;
+  }
+
+  /* Hero — one composition */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: #0b1a22;
+  }
+  .hero-media {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,18,24,.35) 0%, rgba(8,18,24,.15) 35%, rgba(8,18,24,.72) 100%),
+      url("https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=2400&q=80") center 40% / cover no-repeat;
+    transform: scale(1.06);
+    animation: heroDrift 18s var(--ease) infinite alternate;
+  }
+  @keyframes heroDrift {
+    from { transform: scale(1.06) translate3d(0, 0, 0); }
+    to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    width: min(var(--max), calc(100% - 48px));
+    margin: 0 auto;
+    padding: 0 0 72px;
+  }
+  .hero h1 {
+    margin: 0;
+    max-width: 11ch;
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: .96;
+    letter-spacing: -.035em;
+  }
+  .hero .lede {
+    margin: 22px 0 0;
+    max-width: 36rem;
+    font-size: 18px;
+    line-height: 1.55;
+    color: rgba(255,255,255,.9);
+  }
+  .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 52px; padding: 0 22px;
+    font-weight: 700; font-size: 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform .35s var(--ease), background .25s ease, color .25s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-teal { background: var(--teal); color: #fff; }
+  .btn-teal:hover { background: var(--teal-deep); }
+  .btn-ghost {
+    background: transparent; color: #fff;
+    border-color: rgba(255,255,255,.55);
+  }
+  .btn-ghost:hover { background: #fff; color: var(--ink); }
+  .btn-ink { background: var(--ink); color: #fff; }
+  .btn-ink:hover { background: #000; }
+
+  /* Offerings — rules, not cards */
+  .offer {
+    padding: 96px 0 88px;
+    background: var(--paper);
+  }
+  .kicker {
+    margin: 0 0 12px;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin: 0;
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(32px, 4.2vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+  .section-lede {
+    margin: 16px 0 0;
+    max-width: 40rem;
+    color: var(--ink-soft);
+  }
+  .offer-list {
+    margin: 48px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+  .offer-list li {
+    display: grid;
+    grid-template-columns: 72px 1fr 1.1fr;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .offer-list b {
+    font-family: Fraunces, Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--mustard);
+  }
+  .offer-list h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .offer-list p { margin: 0; color: var(--ink-soft); }
+
+  /* About */
+  .about {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    min-height: 720px;
+    background: var(--sand);
+  }
+  .about-photo {
+    min-height: 520px;
+    background:
+      linear-gradient(0deg, rgba(19,32,42,.18), transparent 40%),
+      url("https://media.beehiiv.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/uploads/asset/file/480dce37-0b9a-4eb2-b7df-62330ea47f6c/IMG_0259.jpeg?t=1786406865") center 18% / cover no-repeat;
+  }
+  .about-copy {
+    padding: clamp(40px, 7vw, 88px) clamp(28px, 5vw, 72px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-copy p { color: var(--ink-soft); max-width: 38rem; }
+  .about-copy p + p { margin-top: 14px; }
+  .about-note {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+  }
+
+  /* Book */
+  .book {
+    position: relative;
+    color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+  }
+  .book-bg {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(105deg, rgba(10,28,34,.92) 0%, rgba(10,28,34,.72) 48%, rgba(10,28,34,.45) 100%),
+      url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=80") center / cover no-repeat;
+  }
+  .book .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: end; }
+  .book h2 { color: #fff; max-width: 14ch; }
+  .book .section-lede { color: rgba(255,255,255,.84); }
+  .journey {
+    margin: 36px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .journey li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.9);
+  }
+  .journey span {
+    width: 10px; height: 10px; margin-top: 8px;
+    border-radius: 50%;
+    background: var(--mustard);
+  }
+  .journey .soon { background: transparent; border: 1.5px solid rgba(255,255,255,.55); }
+  .book-panel {
+    border-top: 1px solid rgba(255,255,255,.25);
+    padding-top: 24px;
+  }
+  .book-panel h3 {
+    margin: 0 0 10px;
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.15;
+  }
+  .book-panel p { margin: 0 0 18px; color: rgba(255,255,255,.82); }
+  .join {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .join input {
+    flex: 1 1 220px;
+    min-height: 52px;
+    padding: 0 14px;
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.08);
+    color: #fff;
+  }
+  .join input::placeholder { color: rgba(255,255,255,.55); }
+  .join input:focus { outline: 2px solid #fff; outline-offset: 2px; }
+
+  /* Invest — one menu for cohorts, coaching, organizations */
+  .invest {
+    padding: 100px 0 110px;
+    background:
+      linear-gradient(180deg, rgba(10,18,24,.9) 0%, rgba(10,18,24,.94) 55%, rgba(10,18,24,.97) 100%),
+      url("https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=80") center 30% / cover fixed;
+    color: #fff;
+  }
+  .invest .kicker { color: #f0c56a; }
+  .invest h2 { color: #fff; max-width: 18ch; }
+  .invest > .wrap > .section-lede {
+    color: rgba(255,255,255,.78);
+    max-width: 38rem;
+  }
+  .invest-paths { margin-top: 56px; }
+  .path + .path { margin-top: 52px; }
+  .path-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.28);
+  }
+  .path-head .path-kicker {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #7fd4d1;
+  }
+  .path-head p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+    text-align: right;
+    max-width: 28rem;
+  }
+  .offer-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) auto minmax(0, .95fr) auto;
+    gap: 20px 28px;
+    align-items: center;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(255,255,255,.14);
+  }
+  .offer-row.is-simple {
+    grid-template-columns: minmax(0, 1.6fr) auto auto;
+  }
+  .offer-row.is-simple .detail { max-width: 36rem; }
+  .offer-row.is-focus {
+    background: linear-gradient(90deg, rgba(14,124,123,.32), transparent 70%);
+    margin: 0 -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-left: 3px solid var(--mustard);
+  }
+  .offer-row .tag {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #f0c56a;
+  }
+  .offer-row h3 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .offer-row .meta,
+  .offer-row .detail {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: rgba(255,255,255,.58);
+  }
+  .offer-row .price {
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(30px, 3.4vw, 42px);
+    font-weight: 500;
+    letter-spacing: -.03em;
+    white-space: nowrap;
+  }
+  .offer-row ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(255,255,255,.78);
+    font-size: 14px;
+  }
+  .offer-row li + li { margin-top: 4px; }
+  .offer-row .btn {
+    justify-self: end;
+    white-space: nowrap;
+  }
+  .btn-mustard { background: var(--mustard); color: var(--ink); }
+  .btn-mustard:hover { background: #dd9d2a; }
+  .invest .btn-ghost {
+    border-color: rgba(255,255,255,.4);
+  }
+  .invest .btn-ghost:hover {
+    background: #fff;
+    color: var(--ink);
+  }
+  .invest-note {
+    margin: 40px 0 0;
+    font-size: 14px;
+    color: rgba(255,255,255,.55);
+    max-width: 40rem;
+  }
+
+  /* Writing — magazine archive */
+  .writing {
+    position: relative;
+    padding: 108px 0 112px;
+    background:
+      radial-gradient(ellipse 80% 60% at 12% 0%, rgba(14,124,123,.22), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 100% 100%, rgba(201,138,26,.12), transparent 50%),
+      #0d171e;
+    color: #fff;
+    overflow: hidden;
+  }
+  .writing::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: min(42vw, 520px);
+    background:
+      linear-gradient(90deg, rgba(13,23,30,.2), rgba(13,23,30,.95)),
+      url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1400&q=70") left center / cover no-repeat;
+    opacity: .28;
+    pointer-events: none;
+  }
+  .writing .wrap { position: relative; z-index: 1; }
+  .writing-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .writing .kicker { color: #7fd4d1; }
+  .writing h2 { color: #fff; max-width: 14ch; }
+  .writing-head .all {
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #7fd4d1;
+    border-bottom: 1px solid transparent;
+  }
+  .writing-head .all:hover { border-bottom-color: #7fd4d1; }
+  .writing-grid {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 0 56px;
+    align-items: stretch;
+  }
+  .feature-issue {
+    padding: 40px 0 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px 32px;
+    align-items: start;
+  }
+  .feature-issue .issue-num {
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(72px, 10vw, 120px);
+    line-height: .85;
+    letter-spacing: -.04em;
+    color: rgba(127,212,209,.35);
+  }
+  .feature-issue .when {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+  }
+  .feature-issue h3 {
+    margin: 0;
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(30px, 3.8vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+  }
+  .feature-issue p {
+    margin: 16px 0 0;
+    color: rgba(255,255,255,.72);
+    max-width: 34rem;
+    font-size: 16.5px;
+  }
+  .feature-issue .read {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    padding-bottom: 4px;
+    font-weight: 700;
+    color: #7fd4d1;
+    border-bottom: 1px solid rgba(127,212,209,.45);
+    transition: gap .3s var(--ease), border-color .25s ease;
+  }
+  .feature-issue .read:hover {
+    gap: 14px;
+    border-bottom-color: #7fd4d1;
+  }
+  .issue-list {
+    list-style: none;
+    margin: 0;
+    padding: 28px 0 0;
+    border-left: 1px solid rgba(255,255,255,.14);
+  }
+  .issue-list li { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .issue-list li:first-child { border-top: 1px solid rgba(255,255,255,.12); }
+  .issue-list a {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 20px 0 20px 28px;
+    transition: background .25s ease, padding-left .3s var(--ease);
+  }
+  .issue-list a:hover {
+    background: linear-gradient(90deg, rgba(127,212,209,.08), transparent);
+    padding-left: 34px;
+  }
+  .issue-list .n {
+    font-family: Fraunces, Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #f0c56a;
+    line-height: 1.3;
+  }
+  .issue-list small {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.42);
+  }
+  .issue-list h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    transition: color .25s ease;
+  }
+  .issue-list a:hover h4 { color: #7fd4d1; }
+
+  /* Close */
+  .close {
+    padding: 88px 0;
+    background: var(--teal);
+    color: #fff;
+    text-align: center;
+  }
+  .close h2 { color: #fff; max-width: 16ch; margin-left: auto; margin-right: auto; }
+  .close p { margin: 14px auto 0; max-width: 34rem; color: rgba(255,255,255,.88); }
+  .close .join { justify-content: center; margin-top: 28px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .close .join input {
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.35);
+  }
+  .close .btn { background: #fff; color: var(--teal-deep); }
+  .close .btn:hover { background: var(--sand); }
+
+  .footer {
+    background: #0b171d;
+    color: rgba(255,255,255,.72);
+    padding: 36px 0;
+    font-size: 14px;
+  }
+  .footer .wrap {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center;
+  }
+  .footer strong { color: #fff; font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 18px; }
+  .footer nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  .footer a:hover { color: #fff; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 980px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column; align-items: stretch;
+      position: absolute; left: 24px; right: 24px; top: 84px;
+      background: rgba(8,18,24,.96); padding: 12px;
+    }
+    .menu-toggle { display: inline-flex; align-items: center; }
+    .offer-list li, .offer-row, .about, .book .wrap, .writing-grid, .feature-issue {
+      grid-template-columns: 1fr;
+    }
+    .offer-row .btn { justify-self: start; }
+    .path-head { flex-direction: column; align-items: flex-start; }
+    .path-head p { text-align: left; }
+    .writing-head { flex-direction: column; align-items: flex-start; }
+    .issue-list { border-left: 0; padding-top: 8px; }
+    .issue-list a { padding-left: 0; }
+    .issue-list a:hover { padding-left: 8px; }
+    .about-photo { min-height: 420px; }
+    .hero-inner { padding-bottom: 56px; }
+    .writing::before { opacity: .16; width: 100%; }
+  }
+  @media (max-width: 640px) {
+    .wrap, .hero-inner { width: calc(100% - 32px); }
+    .brand strong { display: none; }
+    .offer, .book, .invest, .writing, .close { padding: 64px 0; }
+    .offer-list li { grid-template-columns: 48px 1fr; }
+    .offer-list p { grid-column: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-media { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="https://media.beehiiv.com/cdn-cgi/image/format=auto,width=160,onerror=redirect/uploads/publication/logo/61c04103-ae8b-4530-9d60-243e7a52108b/Newsletter_branding_July_2026.jpg" width="52" height="52" alt="On Becoming a Servant Leader">
+      <strong>On Becoming a Servant Leader</strong>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <ul class="nav-links" id="nav">
+      <li><a href="#help">Programs</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#rates">Invest</a></li>
+      <li><a href="#writing">Archive</a></li>
+      <li><a class="nav-cta" href="#subscribe">Subscribe</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1>On Becoming a Servant Leader</h1>
+      <p class="lede">Servant Leadership and Emotional Intelligence skills for Project Managers — practical guidance to help you lead with purpose, empathy, and impact.</p>
+      <div class="hero-actions">
+        <a class="btn btn-teal" href="#subscribe">Read the Newsletter</a>
+        <a class="btn btn-ghost" href="#help">Explore programs</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer" id="help">
+    <div class="wrap reveal">
+      <p class="kicker">How I can help</p>
+      <h2>Gain executive presence and become a project leader.</h2>
+      <p class="section-lede">Practical programs designed to build Servant Leadership and Emotional Intelligence skills for Project and Program Managers — at work and at home.</p>
+      <ol class="offer-list">
+        <li>
+          <b>01</b>
+          <h3>Leadership Coaching</h3>
+          <p>One-on-one coaching to sharpen your Emotional Intelligence and grow as a Servant Leader who inspires trust.</p>
+        </li>
+        <li>
+          <b>02</b>
+          <h3>Team Workshops</h3>
+          <p>Interactive workshops that help project teams build empathy, communication, and collaborative habits.</p>
+        </li>
+        <li>
+          <b>03</b>
+          <h3>PMO Consulting</h3>
+          <p>Strategic guidance for PMOs looking to embed Servant Leadership and Emotional Intelligence into their team culture and processes.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-photo" role="img" aria-label="Mark Hedquist"></div>
+    <div class="about-copy reveal">
+      <p class="kicker">About the author</p>
+      <h2>Hi, I’m Mark Hedquist</h2>
+      <p>I’ve worked in the corporate world for three decades. I now serve project &amp; program managers, organizational PMOs and executives to build cultures rooted in trust, empathy and service. I founded On Becoming a Servant Leader to share the tools, skills, mindset and behaviors that helped me and others to lead with greater purpose and impact.</p>
+      <p>Whether you are new to your project or program role or a seasoned project leader, my goal is to support you to develop your servant leadership and emotional intelligence skills to enable you to gain executive presence and help you achieve a fulfilling career at work and at home.</p>
+      <p class="about-note">Mareko’s Consulting, LLC · Global PM Leader</p>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="book-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">The book</p>
+        <h2>Join my book launch team</h2>
+        <p class="section-lede">I’m writing a new book on Servant Leadership and Emotional Intelligence for Project Leaders — exploring executive presence, deepening EQ, and navigating the Age of AI and Automation’s impact on PM and Program Manager roles.</p>
+        <ul class="journey">
+          <li><span></span><div>Mapped the core themes: servant leadership behaviors, Emotional Intelligence growth, and executive presence</div></li>
+          <li><span class="soon"></span><div>Building a launch team to shape the book and spread the word</div></li>
+          <li><span class="soon"></span><div>Publication day celebration</div></li>
+        </ul>
+      </div>
+      <div class="book-panel reveal">
+        <h3>Want early access and a voice in shaping the book?</h3>
+        <p>Join for behind-the-scenes updates from first outline to launch day.</p>
+        <form class="join" action="https://www.globalpmleader.com/" method="get">
+          <label class="sr-only" for="launch-email">Email</label>
+          <input id="launch-email" type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+          <button class="btn btn-teal" type="submit">Join the Launch Team</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="invest" id="rates">
+    <div class="wrap reveal">
+      <p class="kicker">Invest in your growth</p>
+      <h2>Choose the path toward becoming a servant leader.</h2>
+      <p class="section-lede">Cohorts, private coaching, and PMO programs — one place to find the path that fits your journey.</p>
+
+      <div class="invest-paths">
+        <div class="path">
+          <div class="path-head">
+            <p class="path-kicker">Cohorts</p>
+            <p>Group learning for project and program managers</p>
+          </div>
+          <article class="offer-row is-focus">
+            <div>
+              <span class="tag">Filling fast</span>
+              <h3>Founding Cohort</h3>
+              <span class="meta">Training begins January 11, 2027. Limited to 50 students.</span>
+            </div>
+            <div class="price">$299</div>
+            <ul>
+              <li>Live weekly group coaching calls</li>
+              <li>Full Servant Leadership curriculum</li>
+              <li>Private community access</li>
+              <li>Direct feedback on your growth plan</li>
+            </ul>
+            <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Get Started</a>
+          </article>
+          <article class="offer-row">
+            <div>
+              <span class="tag">Most popular</span>
+              <h3>Cohort + Coaching</h3>
+              <span class="meta">Offered in 2027</span>
+            </div>
+            <div class="price">$799</div>
+            <ul>
+              <li>Everything in Founding Cohort</li>
+              <li>3 private 1:1 coaching sessions</li>
+              <li>Personalized leadership assessment</li>
+              <li>Priority email support</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Offered in 2027</a>
+          </article>
+          <article class="offer-row">
+            <div>
+              <h3>Self-Paced</h3>
+              <span class="meta">Offering begins 2027</span>
+            </div>
+            <div class="price">$97</div>
+            <ul>
+              <li>Full self-paced video curriculum</li>
+              <li>Downloadable workbooks</li>
+              <li>Community access</li>
+              <li>Lifetime updates</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Offered in 2027</a>
+          </article>
+        </div>
+
+        <div class="path">
+          <div class="path-head">
+            <p class="path-kicker">1:1 coaching</p>
+            <p>Focused sessions to accelerate your growth as a servant leader</p>
+          </div>
+          <article class="offer-row is-simple">
+            <div>
+              <h3>Single Session</h3>
+              <span class="detail">One-time 1:1 coaching session to explore a specific challenge or goal.</span>
+            </div>
+            <div class="price">$150</div>
+            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Book a Session</a>
+          </article>
+          <article class="offer-row is-simple is-focus">
+            <div>
+              <span class="tag">Recommended</span>
+              <h3>4-Session Package</h3>
+              <span class="detail">$125 per session. The recommended starting point for real change.</span>
+            </div>
+            <div class="price">$500</div>
+            <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Book Your Package</a>
+          </article>
+          <article class="offer-row is-simple">
+            <div>
+              <h3>6-Session Package</h3>
+              <span class="detail">$125 per session. A deeper arc for servant leadership and Emotional Intelligence development.</span>
+            </div>
+            <div class="price">$750</div>
+            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Book Your Package</a>
+          </article>
+        </div>
+
+        <div class="path">
+          <div class="path-head">
+            <p class="path-kicker">For organizations</p>
+            <p>Private cohorts for your PMO or project team, priced by engagement</p>
+          </div>
+          <article class="offer-row is-simple">
+            <div>
+              <h3>Virtual Group Cohort</h3>
+              <span class="detail">Up to 15 participants · Live virtual delivery · Ideal for PMO-wide rollout</span>
+            </div>
+            <div class="price">From $5,000</div>
+            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
+          </article>
+          <article class="offer-row is-simple">
+            <div>
+              <h3>Custom Multi-Session Program</h3>
+              <span class="detail">Tailored content design · Pre-work included · Follow-up support included</span>
+            </div>
+            <div class="price">$8,000–$12,000</div>
+            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
+          </article>
+          <article class="offer-row is-simple">
+            <div>
+              <h3>Half-Day Virtual Workshop</h3>
+              <span class="detail">Focused half-day format · Delivered live and virtual · Great for team offsites</span>
+            </div>
+            <div class="price">From $5,000</div>
+            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
+          </article>
+        </div>
+      </div>
+
+      <p class="invest-note">Every organizational engagement is scoped to your needs — contact Mark for a custom proposal.</p>
+    </div>
+  </section>
+
+  <section class="writing" id="writing">
+    <div class="wrap">
+      <div class="writing-head reveal">
+        <div>
+          <p class="kicker">From the archive</p>
+          <h2>Writing for project leaders.</h2>
+        </div>
+        <a class="all" href="https://www.globalpmleader.com/">View all letters →</a>
+      </div>
+      <div class="writing-grid">
+        <article class="feature-issue reveal">
+          <div class="issue-num" aria-hidden="true">06</div>
+          <div>
+            <span class="when">Oct 7, 2026 · 7 min read · Latest issue</span>
+            <h3>Becoming indispensable on purpose.</h3>
+            <p>On Becoming a Servant Leader, Issue No. 6 — the latest letter for project and program managers building presence through service.</p>
+            <a class="read" href="https://www.globalpmleader.com/">Read Issue No. 6 <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <ul class="issue-list reveal">
+          <li>
+            <a href="https://www.globalpmleader.com/">
+              <span class="n">05</span>
+              <span>
+                <small>Sep 23, 2026 · 6 min</small>
+                <h4>Why the silence we call kindness is quietly charging interest</h4>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.globalpmleader.com/">
+              <span class="n">04</span>
+              <span>
+                <small>Sep 9, 2026 · 7 min</small>
+                <h4>Presence Before Position — Issue No. 4</h4>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.globalpmleader.com/">
+              <span class="n">03</span>
+              <span>
+                <small>Aug 26, 2026 · 7 min</small>
+                <h4>Issue No. 3 — Leading without authority</h4>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.globalpmleader.com/">
+              <span class="n">02</span>
+              <span>
+                <small>Aug 12, 2026 · 8 min</small>
+                <h4>Responsibility to Own Decisions</h4>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="subscribe">
+    <div class="wrap reveal">
+      <p class="kicker">Newsletter</p>
+      <h2>Lead with purpose, empathy, and impact.</h2>
+      <p>Servant Leadership and Emotional Intelligence skills for Project Managers — delivered by Mark Hedquist.</p>
+      <form class="join" action="https://www.globalpmleader.com/" method="get">
+        <label class="sr-only" for="sub-email">Email</label>
+        <input id="sub-email" type="email" name="email" placeholder="Type your email..." required autocomplete="email">
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <strong>On Becoming a Servant Leader</strong>
+      <div>© 2026 Mareko’s Consulting, LLC</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#help">Programs</a>
+      <a href="#about">About</a>
+      <a href="#rates">Invest</a>
+      <a href="#writing">Archive</a>
+      <a href="https://www.globalpmleader.com/">Live site</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
