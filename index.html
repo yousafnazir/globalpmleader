@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -314,119 +315,195 @@
   .join input::placeholder { color: rgba(255,255,255,.55); }
   .join input:focus { outline: 2px solid #fff; outline-offset: 2px; }
 
-  /* Invest — one menu for cohorts, coaching, organizations */
-  .invest {
-    padding: 100px 0 110px;
-    background:
-      linear-gradient(180deg, rgba(10,18,24,.9) 0%, rgba(10,18,24,.94) 55%, rgba(10,18,24,.97) 100%),
-      url("https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=2000&q=80") center 30% / cover fixed;
-    color: #fff;
+  /* Invest — three stacked bands, one quiet palette */
+  .invest-head {
+    padding: 100px 0 48px;
+    background: var(--sand);
+    color: var(--ink);
+    text-align: center;
   }
-  .invest .kicker { color: #f0c56a; }
-  .invest h2 { color: #fff; max-width: 18ch; }
-  .invest > .wrap > .section-lede {
-    color: rgba(255,255,255,.78);
+  .invest-head .kicker { color: var(--ink-soft); }
+  .invest-head h2 { color: var(--ink); margin-left: auto; margin-right: auto; }
+  .invest-head .section-lede {
+    color: var(--ink-soft);
     max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .invest-paths { margin-top: 56px; }
-  .path + .path { margin-top: 52px; }
-  .path-head {
+
+  .rate-band {
+    padding: 64px 0 72px;
+    color: var(--ink);
+    background: var(--sand);
+    border-top: 1px solid var(--line);
+  }
+  .rate-band.band-coach {
+    background: #ebe2d4;
+  }
+  .rate-band.band-org {
+    background: var(--sand);
+  }
+
+  .band-head {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255,255,255,.28);
+    align-items: center;
+    gap: 20px 28px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    text-align: left;
   }
-  .path-head .path-kicker {
+  .band-num {
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(56px, 8vw, 80px);
+    font-weight: 500;
+    line-height: .85;
+    color: var(--ink);
+    opacity: .2;
+    flex-shrink: 0;
+    /* Sit mid-height with the heading block, not flush to the kicker */
+    transform: translateY(.12em);
+  }
+  .band-head h3 {
     margin: 0;
-    font-size: 12px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 1.08;
+  }
+  .band-head .band-kicker {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: .16em;
     text-transform: uppercase;
-    color: #7fd4d1;
+    color: var(--ink-soft);
   }
-  .path-head p {
-    margin: 0;
-    font-size: 14px;
-    color: rgba(255,255,255,.55);
-    text-align: right;
-    max-width: 28rem;
+  .band-head p {
+    margin: 10px 0 0;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 32rem;
   }
-  .offer-row {
+
+  .rate-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) auto minmax(0, .95fr) auto;
-    gap: 20px 28px;
-    align-items: center;
-    padding: 26px 0;
-    border-bottom: 1px solid rgba(255,255,255,.14);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
   }
-  .offer-row.is-simple {
-    grid-template-columns: minmax(0, 1.6fr) auto auto;
+  .rate-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 26px 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    min-height: 100%;
   }
-  .offer-row.is-simple .detail { max-width: 36rem; }
-  .offer-row.is-focus {
-    background: linear-gradient(90deg, rgba(14,124,123,.32), transparent 70%);
-    margin: 0 -18px;
-    padding-left: 18px;
-    padding-right: 18px;
-    border-left: 3px solid var(--mustard);
+  .rate-card.is-featured {
+    background: var(--ink);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 24px 48px rgba(19, 32, 42, .18);
   }
-  .offer-row .tag {
-    display: inline-block;
-    margin-bottom: 6px;
+  .rate-card .eyebrow {
+    margin: 0 0 14px;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: #f0c56a;
+    color: var(--ink-soft);
   }
-  .offer-row h3 {
+  .rate-card.is-featured .eyebrow { color: rgba(255,255,255,.55); }
+  .rate-card h3 {
     margin: 0;
-    font-size: 21px;
-    font-weight: 600;
-  }
-  .offer-row .meta,
-  .offer-row .detail {
-    display: block;
-    margin-top: 6px;
-    font-size: 14px;
-    line-height: 1.45;
-    color: rgba(255,255,255,.58);
-  }
-  .offer-row .price {
     font-family: Fraunces, Georgia, serif;
-    font-size: clamp(30px, 3.4vw, 42px);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+  }
+  .rate-card .when {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .rate-card.is-featured .when { color: rgba(255,255,255,.62); }
+  .rate-card .amount {
+    margin: 22px 0 6px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(36px, 4vw, 44px);
     font-weight: 500;
     letter-spacing: -.03em;
-    white-space: nowrap;
+    line-height: 1;
   }
-  .offer-row ul {
-    margin: 0;
+  .rate-card .per {
+    margin: 0 0 20px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .rate-card.is-featured .per { color: rgba(255,255,255,.55); }
+  .rate-card ul {
+    margin: 0 0 28px;
     padding: 0;
     list-style: none;
-    color: rgba(255,255,255,.78);
+    flex: 1;
+  }
+  .rate-card li {
+    position: relative;
+    padding: 0 0 0 18px;
     font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
   }
-  .offer-row li + li { margin-top: 4px; }
-  .offer-row .btn {
-    justify-self: end;
-    white-space: nowrap;
+  .rate-card li + li { margin-top: 10px; }
+  .rate-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink);
+    opacity: .35;
   }
-  .btn-mustard { background: var(--mustard); color: var(--ink); }
-  .btn-mustard:hover { background: #dd9d2a; }
-  .invest .btn-ghost {
-    border-color: rgba(255,255,255,.4);
+  .rate-card.is-featured li { color: rgba(255,255,255,.78); }
+  .rate-card.is-featured li::before { background: #fff; opacity: .55; }
+  .rate-card .btn {
+    width: 100%;
+    justify-content: center;
   }
-  .invest .btn-ghost:hover {
-    background: #fff;
+  .rate-card .btn.is-muted {
+    background: transparent;
     color: var(--ink);
+    border: 1.5px solid var(--line);
   }
+  .rate-card .btn.is-muted:hover {
+    border-color: var(--ink);
+    background: transparent;
+  }
+  .rate-card.is-featured .btn-mustard { background: var(--mustard); color: var(--ink); }
+  .rate-card.is-featured .btn.is-muted {
+    color: #fff;
+    border-color: rgba(255,255,255,.35);
+  }
+  .rate-card.is-featured .btn.is-muted:hover {
+    background: rgba(255,255,255,.1);
+    border-color: #fff;
+  }
+
+  .btn-mustard { background: var(--ink); color: #fff; }
+  .btn-mustard:hover { background: #243542; }
+
   .invest-note {
-    margin: 40px 0 0;
+    margin: 32px 0 0;
     font-size: 14px;
-    color: rgba(255,255,255,.55);
-    max-width: 40rem;
+    color: var(--ink-soft);
+    max-width: 36rem;
   }
 
   /* Writing — magazine archive */
@@ -619,12 +696,10 @@
       background: rgba(8,18,24,.96); padding: 12px;
     }
     .menu-toggle { display: inline-flex; align-items: center; }
-    .offer-list li, .offer-row, .about, .book .wrap, .writing-grid, .feature-issue {
+    .offer-list li, .about, .book .wrap, .writing-grid, .feature-issue {
       grid-template-columns: 1fr;
     }
-    .offer-row .btn { justify-self: start; }
-    .path-head { flex-direction: column; align-items: flex-start; }
-    .path-head p { text-align: left; }
+    .rate-grid { grid-template-columns: 1fr; max-width: 420px; }
     .writing-head { flex-direction: column; align-items: flex-start; }
     .issue-list { border-left: 0; padding-top: 8px; }
     .issue-list a { padding-left: 0; }
@@ -636,7 +711,7 @@
   @media (max-width: 640px) {
     .wrap, .hero-inner { width: calc(100% - 32px); }
     .brand strong { display: none; }
-    .offer, .book, .invest, .writing, .close { padding: 64px 0; }
+    .offer, .book, .invest-head, .rate-band, .writing, .close { padding: 64px 0; }
     .offer-list li { grid-template-columns: 48px 1fr; }
     .offer-list p { grid-column: 2; }
   }
@@ -743,128 +818,169 @@
     </div>
   </section>
 
-  <section class="invest" id="rates">
+  <div class="invest-head" id="rates">
     <div class="wrap reveal">
       <p class="kicker">Invest in your growth</p>
-      <h2>Choose the path toward becoming a servant leader.</h2>
-      <p class="section-lede">Cohorts, private coaching, and PMO programs — one place to find the path that fits your journey.</p>
+      <h2>Choose the path that fits.</h2>
+      <p class="section-lede">Three ways to work together — for individuals, for your own coaching, and for your organization.</p>
+    </div>
+  </div>
 
-      <div class="invest-paths">
-        <div class="path">
-          <div class="path-head">
-            <p class="path-kicker">Cohorts</p>
-            <p>Group learning for project and program managers</p>
-          </div>
-          <article class="offer-row is-focus">
-            <div>
-              <span class="tag">Filling fast</span>
-              <h3>Founding Cohort</h3>
-              <span class="meta">Training begins January 11, 2027. Limited to 50 students.</span>
-            </div>
-            <div class="price">$299</div>
-            <ul>
-              <li>Live weekly group coaching calls</li>
-              <li>Full Servant Leadership curriculum</li>
-              <li>Private community access</li>
-              <li>Direct feedback on your growth plan</li>
-            </ul>
-            <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Get Started</a>
-          </article>
-          <article class="offer-row">
-            <div>
-              <span class="tag">Most popular</span>
-              <h3>Cohort + Coaching</h3>
-              <span class="meta">Offered in 2027</span>
-            </div>
-            <div class="price">$799</div>
-            <ul>
-              <li>Everything in Founding Cohort</li>
-              <li>3 private 1:1 coaching sessions</li>
-              <li>Personalized leadership assessment</li>
-              <li>Priority email support</li>
-            </ul>
-            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Offered in 2027</a>
-          </article>
-          <article class="offer-row">
-            <div>
-              <h3>Self-Paced</h3>
-              <span class="meta">Offering begins 2027</span>
-            </div>
-            <div class="price">$97</div>
-            <ul>
-              <li>Full self-paced video curriculum</li>
-              <li>Downloadable workbooks</li>
-              <li>Community access</li>
-              <li>Lifetime updates</li>
-            </ul>
-            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Offered in 2027</a>
-          </article>
-        </div>
-
-        <div class="path">
-          <div class="path-head">
-            <p class="path-kicker">1:1 coaching</p>
-            <p>Focused sessions to accelerate your growth as a servant leader</p>
-          </div>
-          <article class="offer-row is-simple">
-            <div>
-              <h3>Single Session</h3>
-              <span class="detail">One-time 1:1 coaching session to explore a specific challenge or goal.</span>
-            </div>
-            <div class="price">$150</div>
-            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Book a Session</a>
-          </article>
-          <article class="offer-row is-simple is-focus">
-            <div>
-              <span class="tag">Recommended</span>
-              <h3>4-Session Package</h3>
-              <span class="detail">$125 per session. The recommended starting point for real change.</span>
-            </div>
-            <div class="price">$500</div>
-            <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Book Your Package</a>
-          </article>
-          <article class="offer-row is-simple">
-            <div>
-              <h3>6-Session Package</h3>
-              <span class="detail">$125 per session. A deeper arc for servant leadership and Emotional Intelligence development.</span>
-            </div>
-            <div class="price">$750</div>
-            <a class="btn btn-ghost" href="https://www.globalpmleader.com/">Book Your Package</a>
-          </article>
-        </div>
-
-        <div class="path">
-          <div class="path-head">
-            <p class="path-kicker">For organizations</p>
-            <p>Private cohorts for your PMO or project team, priced by engagement</p>
-          </div>
-          <article class="offer-row is-simple">
-            <div>
-              <h3>Virtual Group Cohort</h3>
-              <span class="detail">Up to 15 participants · Live virtual delivery · Ideal for PMO-wide rollout</span>
-            </div>
-            <div class="price">From $5,000</div>
-            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
-          </article>
-          <article class="offer-row is-simple">
-            <div>
-              <h3>Custom Multi-Session Program</h3>
-              <span class="detail">Tailored content design · Pre-work included · Follow-up support included</span>
-            </div>
-            <div class="price">$8,000–$12,000</div>
-            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
-          </article>
-          <article class="offer-row is-simple">
-            <div>
-              <h3>Half-Day Virtual Workshop</h3>
-              <span class="detail">Focused half-day format · Delivered live and virtual · Great for team offsites</span>
-            </div>
-            <div class="price">From $5,000</div>
-            <a class="btn btn-teal" href="https://www.globalpmleader.com/">Request a Proposal</a>
-          </article>
+  <section class="rate-band band-cohorts" aria-labelledby="band-cohorts-h">
+    <div class="wrap reveal">
+      <div class="band-head">
+        <span class="band-num">1</span>
+        <div>
+          <span class="band-kicker">Cohorts</span>
+          <h3 id="band-cohorts-h">Group learning for project managers</h3>
+          <p>Learn alongside other project and program managers.</p>
         </div>
       </div>
+      <div class="rate-grid">
+        <article class="rate-card is-featured">
+          <p class="eyebrow">Filling fast · Starts Jan 11, 2027</p>
+          <h3>Founding Cohort</h3>
+          <span class="when">Limited to 50 students</span>
+          <div class="amount">$299</div>
+          <p class="per">One cohort · live + community</p>
+          <ul>
+            <li>Live weekly group coaching</li>
+            <li>Full Servant Leadership curriculum</li>
+            <li>Private community + growth-plan feedback</li>
+          </ul>
+          <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Get Started</a>
+        </article>
+        <article class="rate-card">
+          <p class="eyebrow">Most popular · 2027</p>
+          <h3>Cohort + Coaching</h3>
+          <span class="when">Cohort plus three private sessions</span>
+          <div class="amount">$799</div>
+          <p class="per">Offered in 2027</p>
+          <ul>
+            <li>Everything in Founding Cohort</li>
+            <li>3 private 1:1 coaching sessions</li>
+            <li>Leadership assessment + priority support</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Offered in 2027</a>
+        </article>
+        <article class="rate-card">
+          <p class="eyebrow">Self-paced · 2027</p>
+          <h3>Self-Paced</h3>
+          <span class="when">Learn on your own schedule</span>
+          <div class="amount">$97</div>
+          <p class="per">Offering begins 2027</p>
+          <ul>
+            <li>Full video curriculum</li>
+            <li>Downloadable workbooks</li>
+            <li>Community access + lifetime updates</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Offered in 2027</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <section class="rate-band band-coach" aria-labelledby="band-coach-h">
+    <div class="wrap reveal">
+      <div class="band-head">
+        <span class="band-num">2</span>
+        <div>
+          <span class="band-kicker">1:1 Coaching</span>
+          <h3 id="band-coach-h">Private sessions, one-on-one</h3>
+          <p>Focused sessions to accelerate your growth as a servant leader.</p>
+        </div>
+      </div>
+      <div class="rate-grid">
+        <article class="rate-card">
+          <p class="eyebrow">One session</p>
+          <h3>Single Session</h3>
+          <span class="when">Explore one challenge or goal</span>
+          <div class="amount">$150</div>
+          <p class="per">Per session</p>
+          <ul>
+            <li>60-minute private coaching</li>
+            <li>Clear next steps after the call</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Book a Session</a>
+        </article>
+        <article class="rate-card is-featured">
+          <p class="eyebrow">Recommended</p>
+          <h3>4-Session Package</h3>
+          <span class="when">Best starting point for real change</span>
+          <div class="amount">$500</div>
+          <p class="per">$125 per session</p>
+          <ul>
+            <li>Four private coaching sessions</li>
+            <li>Servant leadership + EQ focus</li>
+            <li>Progress tracked across the arc</li>
+          </ul>
+          <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Book Your Package</a>
+        </article>
+        <article class="rate-card">
+          <p class="eyebrow">Deeper arc</p>
+          <h3>6-Session Package</h3>
+          <span class="when">For sustained leadership development</span>
+          <div class="amount">$750</div>
+          <p class="per">$125 per session</p>
+          <ul>
+            <li>Six private coaching sessions</li>
+            <li>Deeper EQ and presence work</li>
+            <li>Room for complex role transitions</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Book Your Package</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rate-band band-org" aria-labelledby="band-org-h">
+    <div class="wrap reveal">
+      <div class="band-head">
+        <span class="band-num">3</span>
+        <div>
+          <span class="band-kicker">For organizations</span>
+          <h3 id="band-org-h">Private programs for your PMO or team</h3>
+          <p>Scoped to the engagement, delivered live and virtual.</p>
+        </div>
+      </div>
+      <div class="rate-grid">
+        <article class="rate-card">
+          <p class="eyebrow">PMO rollout</p>
+          <h3>Virtual Group Cohort</h3>
+          <span class="when">Up to 15 participants · live virtual</span>
+          <div class="amount">From $5,000</div>
+          <p class="per">Per engagement</p>
+          <ul>
+            <li>Live virtual delivery</li>
+            <li>Built for PMO-wide rollout</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Request a Proposal</a>
+        </article>
+        <article class="rate-card is-featured">
+          <p class="eyebrow">Custom program</p>
+          <h3>Multi-Session Program</h3>
+          <span class="when">Tailored content · pre-work · follow-up</span>
+          <div class="amount">$8k–$12k</div>
+          <p class="per">Typical range</p>
+          <ul>
+            <li>Content designed for your team</li>
+            <li>Pre-work and follow-up included</li>
+          </ul>
+          <a class="btn btn-mustard" href="https://www.globalpmleader.com/">Request a Proposal</a>
+        </article>
+        <article class="rate-card">
+          <p class="eyebrow">Team offsite</p>
+          <h3>Half-Day Workshop</h3>
+          <span class="when">Focused half-day · live virtual</span>
+          <div class="amount">From $5,000</div>
+          <p class="per">Per workshop</p>
+          <ul>
+            <li>Concentrated half-day format</li>
+            <li>Ideal for team offsites</li>
+          </ul>
+          <a class="btn is-muted" href="https://www.globalpmleader.com/">Request a Proposal</a>
+        </article>
+      </div>
       <p class="invest-note">Every organizational engagement is scoped to your needs — contact Mark for a custom proposal.</p>
     </div>
   </section>
